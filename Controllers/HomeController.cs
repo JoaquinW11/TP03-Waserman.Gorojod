@@ -15,6 +15,16 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        SugeridorReceta sugeridor = new SugeridorReceta();
+        return View();
+    }
+
+    public IActionResult generarResultado() {
+        SugeridorReceta sugeridor = new SugeridorReceta();
+        ViewBag.platoS = sugeridor.determinarPlato();
+        ViewBag.cTiempo = sugeridor.calcularTiempo();
+        ViewBag.deterD = sugeridor.determinarDificultad();
+        ViewBag.genSaludo = sugeridor.generarSaludo();
         return View();
     }
 

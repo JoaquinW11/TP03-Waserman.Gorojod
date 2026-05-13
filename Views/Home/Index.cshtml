@@ -3,6 +3,15 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Bienvenidos!</h1>
+    <p>Bienvenidos al sugeridor de recetas.</p>
 </div>
+
+<form action='@Url.Action("Index", "Home")' method="GET" enctype="multipart/form-data">
+    Nombre: <input type = "text" name = "nombre"> </br>
+    Fecha de Nacimiento(mm/dd/aaaa): <input type = "number" name = "fechaNacimiento"> </br>
+    Tipo de comida: <input type = "radio" name = "tipoComida" value = "Caliente">Caliente </br>
+                    <input type = "radio" name = "tipoComida" value = "Fría">Fría </br>
+    Presupuesto: <input type = "number" name = "presupuesto">
+    Cantidad de Personas: <input type = "number" name = "cantidad" min = 1 max = 20> </br>
+</form>
