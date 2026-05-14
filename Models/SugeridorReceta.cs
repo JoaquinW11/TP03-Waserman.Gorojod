@@ -57,4 +57,33 @@ public class SugeridorReceta{
             saludo = "Buenas noches!";
         return saludo;
     }
+    public int calcularEdad(){
+        int edad = DateTime.Today.Year - fechaNacimiento.Year;
+        if(fechaNacimiento.Month > DateTime.Today.Month){
+            edad -= 1;
+        }
+        else if(fechaNacimiento.Month == DateTime.Today.Month && fechaNacimiento.Day > DateTime.Today.Day){
+            edad -=1;
+        }
+        return edad;
+    }
+    public string generarTip(int edad) {
+        string mensaje = " ";
+        if (edad <= 17 && tipoComida == "Caliente") {
+            mensaje = "Cuidado que el fuego quema!";
+        }
+        else if (edad <= 17 && tipoComida == "Fría") {
+            mensaje = "No te pases con la sal.";
+        }
+        else if (edad >= 18 && edad <= 59) {
+            mensaje = "Dale que el chori no puede esperar!!";
+        }
+        else if (edad >= 60 && tipoComida == "Caliente"){
+            mensaje = "Si calentas el horno desde antes queda mejor :D";
+        }
+        else 
+            mensaje = "No cortes muy finito!";
+        return mensaje;
+    }
+
 }
